@@ -1,0 +1,17 @@
+# Numeros de linea a la izquierda
+set linenumbers
+
+# Resaltado de sintaxis para todos los lenguajes instalados
+include "/usr/share/nano/*.nanorc"
+
+# Scroll suave linea a linea en vez de saltar media pantalla
+
+# Indentacion automatica y tamano de tabulacion a 4
+set autoindent
+set tabsize 4
+
+# Modo raton para posicionar el cursor con clic
+set mouse
+
+# Mostrar posicion del cursor en la barra inferior (linea y columna)
+set constantshow
