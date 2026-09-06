@@ -27,6 +27,7 @@
     "cpu",
     "memory",
     "battery",
+    "temperature",
     "custom/power",
 	]
 },
@@ -40,7 +41,7 @@
     "custom/idle-indicator",
     "custom/notification-silencing-indicator",
     "custom/screenrecording-indicator",
-    "custom/update", 
+    "custom/tuned", 
     "custom/separator#dot",
     "custom/separator#blank",
 	]
@@ -157,6 +158,21 @@
   "tooltip": true,
   "tooltip-format": "Menú de apagado",
   "on-click": "wlogout -b 4 -c 0 -r 0 -m 0 -T 400 -B 400 -L 300 -R 300"
+},
+
+"custom/tuned": {
+  "format": "{}",
+  "return-type": "json",
+  "exec": "$HOME/.config/waybar/scripts/tuned.sh",
+  "on-click": "$HOME/.config/waybar/scripts/tuned.sh toggle",
+  "interval": 5,
+  "tooltip": true
+},
+"temperature": {
+  "critical-threshold": 80,
+  "format-critical": "{temperatureC}°C ",
+  "format": "{temperatureC}°C ",
+  "interval": 2
 },
 
 
