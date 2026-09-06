@@ -74,4 +74,12 @@ if command -v nvidia-ctk >/dev/null 2>&1; then
   sudo nvidia-ctk cdi generate --output=/etc/cdi/nvidia.yaml 2>/dev/null || true
 fi
 
+# Configurar permisos NOPASSWD para cambiar perfiles de tuned desde Waybar
+echo "==> Configurando regla sudoers para tuned-adm..."
+echo "$USER ALL=(ALL) NOPASSWD: /usr/sbin/tuned-adm" | sudo tee /etc/sudoers.d/99-tuned-waybar >/dev/null
+sudo chmod 0440 /etc/sudoers.d/99-tuned-waybar
+
+# Asegurar servicio tuned activo
+sudo systemctl enable --now tuned
+
 echo "==> Despliegue completado con exito."
