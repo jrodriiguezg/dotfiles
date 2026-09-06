@@ -52,7 +52,7 @@ hl.on("hyprland.start", function()
     -- Barra superior
     hl.exec_cmd("waybar")
 
-    hl.exec_once("swaybg -i ~/.config/hypr/wallpapers/image.jpg -m fill")
+    hl.exec_cmd("swaybg -i ~/.config/hypr/wallpapers/image.jpg -m fill")
     -- Gestión de inactividad / bloqueo automático (config en hypridle.conf)
     hl.exec_cmd("hypridle")
 
@@ -65,8 +65,8 @@ hl.on("hyprland.start", function()
     -- Daemon de KDE Connect, para ver el móvil en la barra
     hl.exec_cmd("kdeconnectd")
     -- Guardar historial de texto e imágenes
-    hl.exec_once("wl-paste --type text --watch cliphist store")
-    hl.exec_once("wl-paste --type image --watch cliphist store")
+    hl.exec_cmd("wl-paste --type text --watch cliphist store")
+    hl.exec_cmd("wl-paste --type image --watch cliphist store")
 end)
 
 -----------------------
